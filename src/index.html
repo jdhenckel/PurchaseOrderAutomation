@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=0" />
+    <title>Purchase Order Automation</title>
+</head>
+<body style="font-family: sans-serif">
+    <div>Purchase Order Automation</div>
+
+    <div id="survey">
+        <!--============== BEGIN CUSTOM QUESTIONNAIRE ===========-->
+        <div class="prompt">For which grades will you be purchasing curriculum?</div>
+        <div class="item"><label><input type="checkbox" name="gradek">k</label></div>
+        <div class="item"><label><input type="checkbox" name="grade1">1</label></div>
+        <div class="item"><label><input type="checkbox" name="grade2">2</label></div>
+        <div class="item"><label><input type="checkbox" name="grade3">3</label></div>
+        <div class="item"><label><input type="checkbox" name="grade4">4</label></div>
+        <div class="item"><label><input type="checkbox" name="grade5">5</label></div>
+        <div class="item"><label><input type="checkbox" name="grade6">6+</label></div>
+        <fieldset data-show-if="grade1">
+            <div class="prompt">Answer for the majority of 1<sup>st</sup> graders:</div>
+            <div class="item"><label><input type="radio" name="grade1_rd" value="below"> Reads below grade level</label></div>
+            <div class="item"><label><input type="radio" name="grade1_rd" value="at"> Reads at grade level</label></div>
+            <div class="item"><label><input type="radio" name="grade1_rd" value="above"> Reads above grade level</label></div>
+            <div class="item"><label><input type="checkbox" name="grade1_hw"> Include handwriting</label></div>
+
+            <div class="item"><label>Number of teachers <input type="text" name="grade1_nt"></label></div>
+            <div class="item"><label>Number of assistant teachers / specialists <input type="text" name="grade1_na"></label></div>
+            <div class="item"><label>Number of students <input type="text" name="grade1_ns"></label></div>
+        </fieldset>
+
+        <!--============== END CUSTOM QUESTIONNAIRE ===========-->
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>

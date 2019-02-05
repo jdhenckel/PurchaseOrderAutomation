@@ -5,31 +5,76 @@
     <title>Purchase Order Automation</title>
 </head>
 <body style="font-family: sans-serif">
-    <div>Purchase Order Automation</div>
+    <div class="banner">Purchase Order Automation</div>
 
     <div id="survey">
-        <!--============== BEGIN CUSTOM QUESTIONNAIRE ===========-->
-        <div class="prompt">For which grades will you be purchasing curriculum?</div>
-        <div class="item"><label><input type="checkbox" name="gradek">k</label></div>
-        <div class="item"><label><input type="checkbox" name="grade1">1</label></div>
-        <div class="item"><label><input type="checkbox" name="grade2">2</label></div>
-        <div class="item"><label><input type="checkbox" name="grade3">3</label></div>
-        <div class="item"><label><input type="checkbox" name="grade4">4</label></div>
-        <div class="item"><label><input type="checkbox" name="grade5">5</label></div>
-        <div class="item"><label><input type="checkbox" name="grade6">6+</label></div>
-        <fieldset data-show-if="grade1">
-            <div class="prompt">Answer for the majority of 1<sup>st</sup> graders:</div>
-            <div class="item"><label><input type="radio" name="grade1_rd" value="below"> Reads below grade level</label></div>
-            <div class="item"><label><input type="radio" name="grade1_rd" value="at"> Reads at grade level</label></div>
-            <div class="item"><label><input type="radio" name="grade1_rd" value="above"> Reads above grade level</label></div>
-            <div class="item"><label><input type="checkbox" name="grade1_hw"> Include handwriting</label></div>
+        <div id="survey-1">
+            <div class="prompt">For which grades will you be purchasing curriculum?</div>
+            <div class="item">
+                <input type="checkbox" id="gradek">
+                <label for="gradek">kindergarten</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="grade1">
+                <label for="grade1">1<sup>st</sup> grade</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="grade2">
+                <label for="grade2">2<sup>nd</sup> grade</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="grade3">
+                <label for="grade3">3<sup>rd</sup> grade</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="grade4">
+                <label for="grade4">4<sup>th</sup> grade</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="grade5">
+                <label for="grade5">5<sup>th</sup> grade</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="grade6">
+                <label for="grade6">6<sup>th</sup> grade or above</label>
+            </div>
+        </div>
+        <div id="survey-2">
+            <div class="prompt">Answer for the majority of students in</div>
+            <div class="item">
+                <input type="radio" id="read1" name="reading" value="below">
+                <label for="read1">Reads below grade level</label>
+            </div>
+            <div class="item">
+                <input type="radio" id="read2" name="reading" value="at">
+                <label for="read2">Reads at grade level</label>
+            </div>
+            <div class="item">
+                <input type="radio" id="read3" name="reading" value="above">
+                <label for="read3">Reads above grade level</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="writing">
+                <label for="writing">Include handwriting</label>
+            </div>
 
-            <div class="item"><label>Number of teachers <input type="text" name="grade1_nt"></label></div>
-            <div class="item"><label>Number of assistant teachers / specialists <input type="text" name="grade1_na"></label></div>
-            <div class="item"><label>Number of students <input type="text" name="grade1_ns"></label></div>
-        </fieldset>
-
-        <!--============== END CUSTOM QUESTIONNAIRE ===========-->
+            <div class="item">
+                <label for="num-teacher">Number of teachers</label> 
+                <input type="text" id="num-teacher">
+            </div>
+            <div class="item">
+                <label for="num-assist">Number of assistant teachers / specialists</label> 
+                <input type="text" id="num-assist">
+            </div>
+            <div class="item">
+                <label for="num-student">Number of students</label> 
+                <input type="text" id="num-student">
+            </div>
+        </div>
+        <div class="button-group">
+            <button>Prev</button>
+            <button>Next</button>
+        </div>
     </div>
     <script src="bundle.js"></script>
 </body>

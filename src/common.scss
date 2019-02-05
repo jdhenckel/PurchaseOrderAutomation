@@ -1,0 +1,33 @@
+
+
+.banner {
+    background-color: azure;
+    font-size: 2em;
+    width: 100vw;
+    margin-bottom: 30px;
+}
+
+.prompt {
+    padding: 10px;
+    font-weight: bold;
+}
+.item {
+    padding: 8px 0 8px 30px;
+    label {
+        min-width: 260px;
+        display: inline-block;
+    }
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 16px;
+    margin: 10px 0 10px 30px;
+    outline: none;
+}

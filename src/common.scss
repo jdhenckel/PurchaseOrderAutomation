@@ -11,11 +11,15 @@
     padding: 10px;
     font-weight: bold;
 }
+
 .item {
     padding: 8px 0 8px 30px;
     label {
         min-width: 260px;
         display: inline-block;
+    }
+    input[type="number"] {
+        width: 50px;
     }
 }
 

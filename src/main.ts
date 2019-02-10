@@ -16,52 +16,75 @@ class Grade {
 
 export class MainApp {
 
+    // The page is the grade currently shown, else -1 is the checkboxes page.
     page: number;
     grades: Grade[];
 
     constructor(public utils: Utils)
     {
         console.log('construct MainApp');
-        this.page = 0;
+        this.parseGradeLabels();
+        this.page = -1;
         this.showPage();
-        this.grades = [
-            new Grade('grk', 'kindergarten'),
-            new Grade('gr1', '1<sup>st</sup> grade'),
-            new Grade('gr2', '2<sup>nd</sup> grade'),
-            new Grade('gr3', '3<sup>rd</sup> grade'),
-            new Grade('gr4', '4<sup>th</sup> grade'),
-            new Grade('gr5', '5<sup>th</sup> grade'),
-            new Grade('gr6', '6<sup>th</sup> grade and above'),
-        ];
+        this.utils.showDiv('all-questions',true);
     }
 
-
-    onNext() {
-        if (this.page == 0) {
-            this.parseGrades();
+    // loop over the checkboxes to create parallel array of grades
+    parseGradeLabels() {
+        let labelList = document.getElementById('ask-grade').getElementsByTagName('LABEL');
+        this.grades = [];
+        for (let label of Array.from(labelList)) {
+            this.grades.push(new Grade(label.getAttribute('for'), label.innerHTML));
         }
-        ++this.page;
+        console.log('parse grades',this.grades);
     }
 
+
+    // increment to the next active page
+    onNext() {
+        if (this.page == -1) {
+            this.setActiveGrades();
+        }
+        while (++this.page < this.grades.length && !this.grades[this.page].active) {}
+        this.showPage();
+    }
+
+    // decrement to the previous active page
     onPrev() {
-        if (this.page > 0) --this.page;
+        while (--this.page >= 0 && !this.grades[this.page].active) {}
+        this.showPage();
     }
 
-    parseGrades() {
+    // loop over the checkboxes to set the active flag on each grade
+    setActiveGrades() {
         for (let g of this.grades) {
             let e = <HTMLInputElement> document.getElementById(g.id);
             g.active = e && e.checked;
         }
     }
 
+    // show to correct page, and activate the prev/next buttons appropriately
     showPage() {
+        this.utils.showDiv('ask-grade',this.page == -1);
+        let i = 0;
+        let anyActive = false;
+        for (let g of this.grades) {
+            this.utils.showDiv(g.id + '-questions',this.page == i++);
+            anyActive = anyActive || g.active;
+        }
+        this.utils.getButton('prev-button').disabled = this.page < 0;
+        this.utils.getButton('next-button').disabled = !anyActive;
+    }
 
+    // when user changes the grades checkboxes
+    onChangeGrades() {
+        this.setActiveGrades();
+        this.showPage();
     }
 }
 
 //==================================
 // Create main app, and install it in a global variable
 
-let app = new MainApp(new Utils(document));
+(<any>window).app = new MainApp(new Utils());
 
-(<any>window || global || {}).app = app;

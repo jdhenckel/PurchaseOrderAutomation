@@ -1,26 +1,17 @@
 
+body {
+    font-family: sans-serif;
+    margin-left: 20px;
+}
+
 
 .banner {
     background-color: azure;
+    background: url(//www.logicofenglish.com/media/rokgallery/8/884fff4d-0d23-4ad5-c9c9-38338034637c/ea2d179f-f86a-4f1e-c875-ea4644330113.jpg) no-repeat center center;
     font-size: 2em;
     width: 100vw;
-    margin-bottom: 30px;
-}
-
-.prompt {
-    padding: 10px;
-    font-weight: bold;
-}
-
-.item {
-    padding: 8px 0 8px 30px;
-    label {
-        min-width: 260px;
-        display: inline-block;
-    }
-    input[type="number"] {
-        width: 50px;
-    }
+    margin: -10px 0 0 -20px;
+    padding: 30px 0 0 50px;
 }
 
 button, input, select, textarea {
@@ -28,10 +19,46 @@ button, input, select, textarea {
     font-size: inherit;
 }
 
-button {
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: 16px;
-    margin: 10px 0 10px 30px;
-    outline: none;
+#survey {
+
+    #all-questions {
+        min-height: calc(400px);
+    }
+    .prompt {
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .item {
+        padding: 8px 0 8px 30px;
+        label {
+            min-width: 260px;
+            display: inline-block;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+    }
+
+    .button-group {
+        width: 100vw;
+        background-color: #174489;
+    }
+
+    button {
+        padding: 8px 20px;
+        font-weight: bold;
+        border-radius: 16px;
+        margin: 10px 0 10px 30px;
+        outline: none;
+        background-color: #15a748;
+        color: #ffff00;
+        border-color: #05d44d;
+    }
+    button:disabled {
+        background-color: #747474;
+        color: #a8a8a8;
+        border-color: #a7a7a7;
+    }
 }
+

@@ -5,100 +5,121 @@
     <title>Purchase Order Automation</title>
 </head>
 <body style="font-family: sans-serif">
-    <div class="banner">Purchase Order Automation</div>
-
+    <div class="banner">
+        <img src="https://www.logicofenglish.com/images/Logos/LOE_logo_wide5_DD_slogan_340.png">
+    </div>
+    <h1>
+        Purchase Order Automation
+    </h1>
     <div id="survey">
-        <div id="ask-grade">
-            <div class="prompt">For which grades will you be purchasing curriculum?</div>
-            <div class="item">
-                <input type="checkbox" id="grk">
-                <label for="gradek">kindergarten</label>
+        <div id="all-questions" style="display:none">
+            <div id="ask-grade">
+                <div class="prompt">For which grades will you be purchasing curriculum?</div>
+                <div class="item">
+                    <input type="checkbox" id="grk" onclick="app.onChangeGrades()">
+                    <label for="grk">kindergarten</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr1" onclick="app.onChangeGrades()">
+                    <label for="gr1">1<sup>st</sup> grade</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr2" onclick="app.onChangeGrades()">
+                    <label for="gr2">2<sup>nd</sup> grade</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr3" onclick="app.onChangeGrades()">
+                    <label for="gr3">3<sup>rd</sup> grade</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr4" onclick="app.onChangeGrades()">
+                    <label for="gr4">4<sup>th</sup> grade</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr5" onclick="app.onChangeGrades()">
+                    <label for="gr5">5<sup>th</sup> grade</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr6" onclick="app.onChangeGrades()">
+                    <label for="gr6">6<sup>th</sup> grade or above</label>
+                </div>
             </div>
-            <div class="item">
-                <input type="checkbox" id="gr1">
-                <label for="grade1">1<sup>st</sup> grade</label>
+            <div id="grk-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in kindergarten</div>
+                <div class="item">
+                    <input type="radio" id="grk-read1" name="reading" value="below">
+                    <label for="grk-read1">Cannot read</label>
+                </div>
+                <div class="item">
+                    <input type="radio" id="grk-read2" name="reading" value="at">
+                    <label for="grk-read2">Reads slowly</label>
+                </div>
+                <div class="item">
+                    <input type="radio" id="grk-read3" name="reading" value="above">
+                    <label for="grk-read3">Reads fluently</label>
+                </div>
+                <div class="item">
+                    <label for="grk-num-teacher">Number of teachers</label> 
+                    <input type="number" min=0 max=100 id="grk-num-teacher">
+                </div>
+                <div class="item">
+                    <label for="grk-num-assist">Number of assistants</label> 
+                    <input type="number" min=0 max=100 id="grk-num-assist">
+                </div>
+                <div class="item">
+                    <label for="grk-num-student">Number of students</label> 
+                    <input type="number" min=0 max=9999 id="grk-num-student">
+                </div>            
             </div>
-            <div class="item">
-                <input type="checkbox" id="gr2">
-                <label for="grade2">2<sup>nd</sup> grade</label>
+            <div id="gr1-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in 1st grade</div>
+                <div class="item">
+                    <input type="radio" id="gr1-read1" name="reading" value="below">
+                    <label for="gr1-read1">Reads below grade level</label>
+                </div>
+                <div class="item">
+                    <input type="radio" id="gr1-read2" name="reading" value="at">
+                    <label for="gr1-read2">Reads at grade level</label>
+                </div>
+                <div class="item">
+                    <input type="radio" id="gr1-read3" name="reading" value="above">
+                    <label for="gr1-read3">Reads above grade level</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gr1-writing">
+                    <label for="gr1-writing">Include handwriting</label>
+                </div>
+                <div class="item">
+                    <label for="gr1-num-teacher">Number of teachers</label> 
+                    <input type="number" min=0 max=100 id="gr1-num-teacher">
+                </div>
+                <div class="item">
+                    <label for="gr1-num-assist">Number of assistants <br>(assistant teachers or specialists)</label> 
+                    <input type="number" min=0 max=100 id="gr1-num-assist">
+                </div>
+                <div class="item">
+                    <label for="gr1-num-student">Number of students</label> 
+                    <input type="number" min=0 max=9999 id="gr1-num-student">
+                </div>            
             </div>
-            <div class="item">
-                <input type="checkbox" id="gr3">
-                <label for="grade3">3<sup>rd</sup> grade</label>
+            <div id="gr2-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in 2nd grade</div>
             </div>
-            <div class="item">
-                <input type="checkbox" id="gr4">
-                <label for="grade4">4<sup>th</sup> grade</label>
+            <div id="gr3-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in 3rd grade</div>
             </div>
-            <div class="item">
-                <input type="checkbox" id="gr5">
-                <label for="grade5">5<sup>th</sup> grade</label>
+            <div id="gr4-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in 4th grade</div>
             </div>
-            <div class="item">
-                <input type="checkbox" id="gr6">
-                <label for="grade6">6<sup>th</sup> grade or above</label>
+            <div id="gr5-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in 5th grade</div>
             </div>
-        </div>
-        <div id="grk-questions" style="display:none">
-            <div class="prompt">Answer for the majority of students in kindergarten</div>
-            <div class="item">
-                <input type="radio" id="grk-read1" name="reading" value="below">
-                <label for="grk-read1">Cannot read</label>
+            <div id="gr6-questions" class="gr-questions">
+                <div class="prompt">Answer for the majority of students in 6th grade and above</div>
             </div>
-            <div class="item">
-                <input type="radio" id="grk-read2" name="reading" value="at">
-                <label for="grk-read2">Reads slowly</label>
-            </div>
-            <div class="item">
-                <input type="radio" id="grk-read3" name="reading" value="above">
-                <label for="grk-read3">Reads fluently</label>
-            </div>
-            <div class="item">
-                <label for="grk-num-teacher">Number of teachers</label> 
-                <input type="number" min=0 max=100 id="grk-num-teacher">
-            </div>
-            <div class="item">
-                <label for="grk-num-assist">Number of assistants</label> 
-                <input type="number" min=0 max=100 id="grk-num-assist">
-            </div>
-            <div class="item">
-                <label for="grk-num-student">Number of students</label> 
-                <input type="number" min=0 max=9999 id="grk-num-student">
-            </div>            
-        </div>
-        <div id="gr1-questions" style="display:none">
-            <div class="prompt">Answer for the majority of students in kindergarten</div>
-            <div class="item">
-                <input type="radio" id="gr1-read1" name="reading" value="below">
-                <label for="gr1-read1">Reads below grade level</label>
-            </div>
-            <div class="item">
-                <input type="radio" id="gr1-read2" name="reading" value="at">
-                <label for="gr1-read2">Reads at grade level</label>
-            </div>
-            <div class="item">
-                <input type="radio" id="gr1-read3" name="reading" value="above">
-                <label for="gr1-read3">Reads above grade level</label>
-            </div>
-            <div class="item">
-                <input type="checkbox" id="gr1-writing">
-                <label for="gr1-writing">Include handwriting</label>
-            </div>
-            <div class="item">
-                <label for="gr1-num-teacher">Number of teachers</label> 
-                <input type="number" min=0 max=100 id="gr1-num-teacher">
-            </div>
-            <div class="item">
-                <label for="gr1-num-assist">Number of assistants <br>(assistant teachers or specialists)</label> 
-                <input type="number" min=0 max=100 id="gr1-num-assist">
-            </div>
-            <div class="item">
-                <label for="gr1-num-student">Number of students</label> 
-                <input type="number" min=0 max=9999 id="gr1-num-student">
-            </div>            
         </div>
         <div class="button-group">
-            <button id="prev-button" onclick="app.onPrev()" disabled>Prev</button>
+            <button id="prev-button" onclick="app.onPrev()">Prev</button>
             <button id="next-button" onclick="app.onNext()">Next</button>
         </div>
     </div>

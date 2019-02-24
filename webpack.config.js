@@ -38,6 +38,12 @@ module.exports = {
         watchOptions: {
             ignored: /node_modules/,
             poll: true
+        },
+        proxy: {
+            '/.netlify': {
+                target: 'http://localhost:9000',
+                pathRewrite: { '^/.netlify/functions': '' }
+            }
         }
     }
 };

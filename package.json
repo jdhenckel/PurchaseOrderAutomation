@@ -18,12 +18,14 @@
   "author": "John Henckel",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/aws-lambda": "^8.10.19",
     "@types/node": "^10.12.21",
     "@types/webpack-env": "^1.13.7",
-    "@types/aws-lambda": "^8.10.19",
     "ajv": "^6.8.1",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
+    "netlify-lambda": "^1.4.2",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -39,7 +41,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "netlify-lambda": "^1.4.2",
     "ts-polyfill": "^3.0.1"
   },
   "bugs": {

@@ -7,10 +7,8 @@ export class Utils {
 
     constructor() {
         this.axiosConfig = {
-        //    baseURL: 'whatever',
-            timeout: 600000,
+            timeout: 60000,                // NOTE: AWS Lambda are limited to 10 seconds!
             responseType: 'json',
-            params: { key: 'AIzaSyDUlgg4ejZjOnSRjjA5QDCqU8YrL7QQU3E' }
         };
     }
 
@@ -49,14 +47,8 @@ export class Utils {
         return axios.get<T>(url, this.axiosConfig).then(response => response.data);
     }
 
-    getSheet(): Promise<any> {
-        return this.get<any>('https://sheets.googleapis.com/v4/spreadsheets/1_owEhU0Ewa6Lc20jhhb5uB4uG1CW9ZEkId5nYOzxdts/values/Sheet1!A1:D5');
-    }
-
     getSheet2(): Promise<any> {
-        let host = '//localhost:9000';
-        if (!location.host.startsWith('localhost')) host = '/.netlify/functions';
-        return this.get<any>(host + '/sheet');
+        return this.get<any>('/.netlify/functions/sheet');
     }
 
     sanitize(html: string): string {

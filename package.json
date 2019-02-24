@@ -5,8 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production && node node_modules/netlify-lambda/bin/cmd.js build src/api",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node node_modules/netlify-lambda/bin/cmd.js serve src/api"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "netlify-lambda": "^1.4.2",
     "ts-polyfill": "^3.0.1"
   },
   "bugs": {

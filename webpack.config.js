@@ -16,7 +16,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin(['src/index.html']),
+        new CopyWebpackPlugin(['src/index.html','src/favicon.ico']),
         new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)}),
         new webpack.HotModuleReplacementPlugin()
     ],

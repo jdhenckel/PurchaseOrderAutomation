@@ -31,7 +31,7 @@ export class MainApp {
     }
 
     loadSheet() {
-        utils.getSheet().then(data => {
+        this.utils.getSheet().then(data => {
             console.log('SHEET',data);
         }, err => {
             console.log('SHEET ERROR',err);

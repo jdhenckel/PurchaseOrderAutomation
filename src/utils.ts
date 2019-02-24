@@ -50,7 +50,7 @@ export class Utils {
     }
 
     getSheet(): Promise<any> {
-        return get<any>('https://sheets.googleapis.com/v4/spreadsheets/1_owEhU0Ewa6Lc20jhhb5uB4uG1CW9ZEkId5nYOzxdts/values/Sheet1!A1:D5');
+        return this.get<any>('https://sheets.googleapis.com/v4/spreadsheets/1_owEhU0Ewa6Lc20jhhb5uB4uG1CW9ZEkId5nYOzxdts/values/Sheet1!A1:D5');
     }
 
     sanitize(html: string): string {

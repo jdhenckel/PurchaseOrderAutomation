@@ -9,7 +9,7 @@ export class Utils {
         this.axiosConfig = {
         //    baseURL: 'whatever',
             timeout: 600000,
-            responseType: 'json'
+            responseType: 'json',
             params: { key: 'AIzaSyDUlgg4ejZjOnSRjjA5QDCqU8YrL7QQU3E' }
         };
     }

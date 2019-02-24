@@ -53,6 +53,12 @@ export class Utils {
         return this.get<any>('https://sheets.googleapis.com/v4/spreadsheets/1_owEhU0Ewa6Lc20jhhb5uB4uG1CW9ZEkId5nYOzxdts/values/Sheet1!A1:D5');
     }
 
+    getSheet2(): Promise<any> {
+        let host = '//localhost:9000';
+        if (!location.host.startsWith('localhost')) host = '/.netlify/functions';
+        return this.get<any>(host + '/sheet');
+    }
+
     sanitize(html: string): string {
         // removes all the bad things from html
         if (html == null) return html;

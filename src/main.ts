@@ -31,10 +31,10 @@ export class MainApp {
     }
 
     loadSheet() {
-        this.utils.getSheet().then(data => {
-            console.log('SHEET',data);
+        this.utils.getSheet2().then(data => {
+            console.log('SHEET2',data);
         }, err => {
-            console.log('SHEET ERROR',err);
+            console.log('SHEET2 ERROR',err);
         });
     }
 

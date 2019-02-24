@@ -5,9 +5,11 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --mode production && node node_modules/netlify-lambda/bin/cmd.js build src/api",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node node_modules/netlify-lambda/bin/cmd.js serve src/api"
+    "build": "npm run build-client && npm run build-api",
+    "build-client": "webpack --mode production",
+    "build-api": "node node_modules/netlify-lambda/bin/cmd.js build src/api",
+    "serve": "node node_modules/netlify-lambda/bin/cmd.js serve src/api",
+    "test": "exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^10.12.21",
     "@types/webpack-env": "^1.13.7",
+    "@types/aws-lambda": "^8.10.19",
     "ajv": "^6.8.1",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",

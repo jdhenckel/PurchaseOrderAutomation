@@ -27,6 +27,15 @@ export class MainApp {
         this.page = -1;
         this.showPage();
         this.utils.showDiv('all-questions',true);
+        this.loadSheet();
+    }
+
+    loadSheet() {
+        utils.getSheet().then(data => {
+            console.log('SHEET',data);
+        }, err => {
+            console.log('SHEET ERROR',err);
+        });
     }
 
     // loop over the checkboxes to create parallel array of grades
@@ -87,4 +96,3 @@ export class MainApp {
 // Create main app, and install it in a global variable
 
 (<any>window).app = new MainApp(new Utils());
-

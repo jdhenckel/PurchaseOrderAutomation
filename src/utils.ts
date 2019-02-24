@@ -41,11 +41,15 @@ export class Utils {
     }
 
     post<T>(url: string, data?: any): Promise<T> {
-        return axios.post<T>(url, data, this.axiosConfig).then(response => response.data);   
+        return axios.post<T>(url, data, this.axiosConfig).then(response => response.data);
     }
 
     get<T>(url: string): Promise<T> {
         return axios.get<T>(url, this.axiosConfig).then(response => response.data);
+    }
+
+    getSheet(): Promise<any> {
+        return get<any>('https://sheets.googleapis.com/v4/spreadsheets/spreadsheetId/values/Sheet1!A1:D5');
     }
 
     sanitize(html: string): string {

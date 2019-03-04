@@ -20,8 +20,9 @@ callback(err,foo) in which foo = {
 */
 
 exports.handler = function(event, context, callback) {
+
     callback(null, {
         statusCode: 200,
-        body: "Hello, World"
+        body: JSON.stringify(event,null,4)
     });
 }

@@ -10,7 +10,7 @@ function getSheet() {
     let sheetId = '1_owEhU0Ewa6Lc20jhhb5uB4uG1CW9ZEkId5nYOzxdts';
     let config = {
         baseURL: 'https://sheets.googleapis.com',
-        timeout: 600000,
+        timeout: 20000,     // Note AWS Lambda are limited to 10 seconds
         responseType: 'json',
         params: { key: 'AIzaSyDUlgg4ejZjOnSRjjA5QDCqU8YrL7QQU3E' }
     };
